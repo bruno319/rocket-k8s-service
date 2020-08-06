@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rocket-redis
+  labels:
+    app: rocket-redis
+spec:
+  selector:
+    matchLabels:
+      app: rocket-redis
+  template:
+    metadata:
+      labels:
+        app: rocket-redis
+    spec:
+      hostNetwork: true
+      containers:
+        - name: rocket-redis
+          image: "brunovieira319/rocket-redis-app"
+          ports:
+            - containerPort: 8000
