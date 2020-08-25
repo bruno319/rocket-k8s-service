@@ -13,9 +13,8 @@ spec:
       labels:
         app: rocket-redis
     spec:
-      hostNetwork: true
       containers:
         - name: rocket-redis
           image: "brunovieira319/rocket-redis-app"
           ports:
-            - containerPort: 8000
+          - containerPort: 8000
